@@ -23,27 +23,36 @@ export function SignIn() {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<SignInForm>({
     resolver: zodResolver(signInForm),
   })
 
   async function handleSignIn(data: SignInForm) {
-    await new Promise((resolve) => setTimeout(resolve, 500))
     try {
+      await new Promise((resolve) => setTimeout(resolve, 1000))
       if (
         data.email !== 'lfqcamargo@gmail.com' ||
         data.password !== '12345678'
       ) {
         throw new Error()
       }
-
       toast.success('Login Realizado com sucesso')
     } catch (error) {
       toast.error('Erro ao Realizar Login')
+    } finally {
+      console.log(data)
     }
+  }
+  let activeButton = false
+  const emailWatch = watch('email')
+  const emailPassword = watch('password')
 
-    console.log(data)
+  if (!emailWatch || !emailPassword) {
+    activeButton = false
+  } else {
+    activeButton = true
   }
 
   return (
@@ -71,6 +80,9 @@ export function SignIn() {
               placeholder="Email"
               {...register('email')}
             />
+            {errors.email && (
+              <p className="text-destructive">{errors.email.message}</p>
+            )}
             <Input
               className="bg-transparent"
               type="password"
@@ -78,19 +90,21 @@ export function SignIn() {
               placeholder="Password"
               {...register('password')}
             />
-            {errors.password && <p>{errors.password.message}</p>}
+            {errors.password && (
+              <p className="text-destructive">{errors.password.message}</p>
+            )}
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-center gap-1">
               <Checkbox id="rememberMe" />
-              <label htmlFor="rememberMe">Remember Me</label>
+              <label htmlFor="rememberMe">Lembrar-me</label>
             </div>
             <Button variant="link">
-              <Link to="/revovery-password">Forget Password?</Link>
+              <Link to="/revovery-password">Esqueceu a senha?</Link>
             </Button>
           </div>
           <div>
-            <Button className="w-full" disabled={isSubmitting}>
+            <Button className="w-full" disabled={isSubmitting || !activeButton}>
               LOGIN
             </Button>
           </div>
