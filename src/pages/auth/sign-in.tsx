@@ -47,9 +47,9 @@ export function SignIn() {
   }
   let activeButton = false
   const emailWatch = watch('email')
-  const emailPassword = watch('password')
+  const passwordWatch = watch('password')
 
-  if (!emailWatch || !emailPassword) {
+  if (!emailWatch || !passwordWatch) {
     activeButton = false
   } else {
     activeButton = true
@@ -58,66 +58,63 @@ export function SignIn() {
   return (
     <>
       <Helmet title="Login" />
-      <div className="bg-primary"></div>
-      <div className="relative flex flex-col">
-        <form
-          className="m-auto flex h-3/6 w-4/5 flex-col justify-between"
-          onSubmit={handleSubmit(handleSignIn)}
-        >
-          <div>
-            <h1 className="mb-2 text-2xl font-bold tracking-tight">
-              Seja Bem Vindo!
-            </h1>
-            <span className="lg:text-xl">
-              Por favor conecte se a sua conta para continuar
-            </span>
+      <form
+        className="m-auto flex h-3/6 w-4/5 flex-col justify-between"
+        onSubmit={handleSubmit(handleSignIn)}
+      >
+        <div>
+          <h1 className="mb-2 text-2xl font-bold tracking-tight">
+            Seja Bem Vindo!
+          </h1>
+          <span className="lg:text-xl">
+            Por favor conecte se a sua conta para continuar
+          </span>
+        </div>
+        <div className="flex flex-col gap-5">
+          <Input
+            className="bg-transparent"
+            type="text"
+            id="email"
+            placeholder="Email"
+            {...register('email')}
+          />
+          {errors.email && (
+            <p className="text-destructive">{errors.email.message}</p>
+          )}
+          <Input
+            className="bg-transparent"
+            type="password"
+            id="password"
+            placeholder="Password"
+            {...register('password')}
+          />
+          {errors.password && (
+            <p className="text-destructive">{errors.password.message}</p>
+          )}
+        </div>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center justify-center gap-1">
+            <Checkbox id="rememberMe" />
+            <label htmlFor="rememberMe">Lembrar-me</label>
           </div>
-          <div className="flex flex-col gap-5">
-            <Input
-              className="bg-transparent"
-              type="text"
-              id="email"
-              placeholder="Email"
-              {...register('email')}
-            />
-            {errors.email && (
-              <p className="text-destructive">{errors.email.message}</p>
-            )}
-            <Input
-              className="bg-transparent"
-              type="password"
-              id="password"
-              placeholder="Password"
-              {...register('password')}
-            />
-            {errors.password && (
-              <p className="text-destructive">{errors.password.message}</p>
-            )}
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center justify-center gap-1">
-              <Checkbox id="rememberMe" />
-              <label htmlFor="rememberMe">Lembrar-me</label>
-            </div>
-            <Button variant="link">
-              <Link to="/revovery-password">Esqueceu a senha?</Link>
-            </Button>
-          </div>
-          <div>
-            <Button className="w-full" disabled={isSubmitting || !activeButton}>
-              LOGIN
-            </Button>
-          </div>
-          <div className="flex items-center justify-center">
-            <span>New on our plataform?</span>
-            <Button variant="ghost">
-              <Link className="text-primary" to="/sign-up">
-                Create an account
-              </Link>
-            </Button>
-          </div>
-        </form>
-      </div>
+          <Button variant="link">
+            <Link to="/revovery-password">Esqueceu a senha?</Link>
+          </Button>
+        </div>
+        <div>
+          <Button className="w-full" disabled={isSubmitting || !activeButton}>
+            LOGIN
+          </Button>
+        </div>
+        <div className="flex items-center justify-center">
+          <span>New on our plataform?</span>
+          <Button variant="ghost">
+            <Link className="text-primary" to="/sign-up">
+              Create an account
+            </Link>
+          </Button>
+        </div>
+      </form>
     </>
   )
 }
