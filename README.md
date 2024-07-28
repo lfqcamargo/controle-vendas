@@ -26,3 +26,7 @@ Este sistema fornece uma solução completa e acessível para gestão de estoque
 ### Controle Financeiro
 - **Gestão de Recebíveis:** Sistema para acompanhar vendas a prazo, com alertas para pagamentos atrasados.
 - **Análise Financeira:** Ferramentas para análise de fluxo de caixa e rentabilidade, essenciais para a tomada de decisões estratégicas.
+
+## Licença
+
+Este código é propriedade exclusiva de Lucas Fernando Quinato de Camargo e não pode ser usado, modificado ou distribuído sem permissão expressa. Veja o arquivo [LICENSE](LICENSE) para detalhes completos.
