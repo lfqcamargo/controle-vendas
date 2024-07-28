@@ -1,13 +1,14 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Helmet } from 'react-helmet-async'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
 import { Button } from '../../components/ui/button'
 import { Checkbox } from '../../components/ui/checkbox'
 import { Input } from '../../components/ui/input'
+import { ErrorField } from './components/error-field'
 
 const signInForm = z.object({
   email: z.string().email({ message: 'Email inválido' }),
@@ -20,13 +21,20 @@ const signInForm = z.object({
 type SignInForm = z.infer<typeof signInForm>
 
 export function SignIn() {
+  const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
+
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<SignInForm>({
     resolver: zodResolver(signInForm),
+    defaultValues: {
+      email: searchParams.get('email') ?? '',
+    },
   })
 
   async function handleSignIn(data: SignInForm) {
@@ -38,7 +46,8 @@ export function SignIn() {
       ) {
         throw new Error()
       }
-      toast.success('Login Realizado com sucesso')
+      reset()
+      navigate('/')
     } catch (error) {
       toast.error('Erro ao Realizar Login')
     } finally {
@@ -59,10 +68,10 @@ export function SignIn() {
     <>
       <Helmet title="Login" />
       <form
-        className="m-auto flex h-3/6 w-4/5 flex-col justify-between"
+        className="m-auto flex h-2/5 w-4/5 flex-col justify-around"
         onSubmit={handleSubmit(handleSignIn)}
       >
-        <div>
+        <div className="flex flex-col gap-2">
           <h1 className="mb-2 text-2xl font-bold tracking-tight">
             Seja Bem Vindo!
           </h1>
@@ -70,7 +79,7 @@ export function SignIn() {
             Por favor conecte se a sua conta para continuar
           </span>
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-1">
           <Input
             className="bg-transparent"
             type="text"
@@ -78,9 +87,7 @@ export function SignIn() {
             placeholder="Email"
             {...register('email')}
           />
-          {errors.email && (
-            <p className="text-destructive">{errors.email.message}</p>
-          )}
+          <ErrorField error={errors.email} />
           <Input
             className="bg-transparent"
             type="password"
@@ -88,17 +95,15 @@ export function SignIn() {
             placeholder="Password"
             {...register('password')}
           />
-          {errors.password && (
-            <p className="text-destructive">{errors.password.message}</p>
-          )}
+          <ErrorField error={errors.password} />
         </div>
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-center gap-1">
             <Checkbox id="rememberMe" />
             <label htmlFor="rememberMe">Lembrar-me</label>
           </div>
-          <Button variant="link">
-            <Link to="/revovery-password">Esqueceu a senha?</Link>
+          <Button variant="link" type="button">
+            <Link to="/recovery-password">Esqueceu a senha?</Link>
           </Button>
         </div>
         <div>
@@ -106,15 +111,23 @@ export function SignIn() {
             LOGIN
           </Button>
         </div>
-        <div className="flex items-center justify-center">
-          <span>New on our plataform?</span>
-          <Button variant="ghost">
-            <Link className="text-primary" to="/sign-up">
-              Create an account
-            </Link>
-          </Button>
-        </div>
       </form>
+
+      <div>
+        <span>F</span>
+        <span>G</span>
+        <span>I</span>
+        <span>T</span>
+      </div>
+
+      <div className="flex h-1/5 items-center justify-center">
+        <span>Não tem uma conta?</span>
+        <Button variant="ghost">
+          <Link className="text-primary" to="/sign-up">
+            Criar conta
+          </Link>
+        </Button>
+      </div>
     </>
   )
 }
