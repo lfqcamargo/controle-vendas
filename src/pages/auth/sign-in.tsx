@@ -103,7 +103,15 @@ export function SignIn() {
             <label htmlFor="rememberMe">Lembrar-me</label>
           </div>
           <Button variant="link" type="button">
-            <Link to="/recovery-password">Esqueceu a senha?</Link>
+            <Link
+              to={
+                emailWatch
+                  ? `/recovery-password?email=${emailWatch}`
+                  : `/recovery-password`
+              }
+            >
+              Esqueceu a senha?
+            </Link>
           </Button>
         </div>
         <div>
