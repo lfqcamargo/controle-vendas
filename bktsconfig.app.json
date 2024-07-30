@@ -28,11 +28,4 @@
   "include": [
     "src"
   ],
-  /*Shadcn*/
-  "baseUrl": ".",
-  "paths": {
-    "@/*": [
-      "./src/*"
-    ]
-  }
 }

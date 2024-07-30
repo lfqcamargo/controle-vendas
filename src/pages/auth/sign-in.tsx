@@ -1,13 +1,16 @@
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Facebook, Instagram, Twitch, Twitter } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
-import { Button } from '../../components/ui/button'
-import { Checkbox } from '../../components/ui/checkbox'
-import { Input } from '../../components/ui/input'
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+
 import { ErrorField } from './components/error-field'
 
 const signInForm = z.object({
@@ -67,35 +70,43 @@ export function SignIn() {
   return (
     <>
       <Helmet title="Login" />
-      <form
-        className="m-auto flex h-2/5 w-4/5 flex-col justify-around"
-        onSubmit={handleSubmit(handleSignIn)}
-      >
-        <div className="flex flex-col gap-2">
-          <h1 className="mb-2 text-2xl font-bold tracking-tight">
-            Seja Bem Vindo!
-          </h1>
-          <span className="lg:text-xl">
-            Por favor conecte se a sua conta para continuar
-          </span>
-        </div>
-        <div className="flex flex-col gap-1">
-          <Input
-            className="bg-transparent"
-            type="text"
-            id="email"
-            placeholder="Email"
-            {...register('email')}
-          />
-          <ErrorField error={errors.email} />
-          <Input
-            className="bg-transparent"
-            type="password"
-            id="password"
-            placeholder="Password"
-            {...register('password')}
-          />
-          <ErrorField error={errors.password} />
+
+      <div className="flex flex-col gap-2 p-8">
+        <div className="flex w-[350px] flex-col justify-center gap-6">
+          <div className="flex flex-col gap-2 text-center">
+            <h1 className="text-2xl font-semibold tracking-tight">
+              Acessar painel
+            </h1>
+            <p className="text-sm text-muted-foreground">
+              Acompanhe suas vendas pelo painel do parceiro!
+            </p>
+          </div>
+
+          <form className="space-y-4" onSubmit={handleSubmit(handleSignIn)}>
+            <div className="space-y-1">
+              <Label htmlFor="email">Seu e-mail</Label>
+              <Input
+                className="bg-transparent"
+                type="text"
+                id="email"
+                placeholder="Email"
+                {...register('email')}
+              />
+              <ErrorField error={errors.email} />
+              <Label htmlFor="password">Senha</Label>
+              <Input
+                className="bg-transparent"
+                type="password"
+                id="password"
+                placeholder="Password"
+                {...register('password')}
+              />
+              <ErrorField error={errors.password} />
+            </div>
+            <Button className="w-full" disabled={isSubmitting || !activeButton}>
+              LOGIN
+            </Button>
+          </form>
         </div>
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-center gap-1">
@@ -114,21 +125,15 @@ export function SignIn() {
             </Link>
           </Button>
         </div>
-        <div>
-          <Button className="w-full" disabled={isSubmitting || !activeButton}>
-            LOGIN
-          </Button>
+        <div className="flex h-16 items-center justify-around">
+          <Twitch className="h-5 w-5" />
+          <Twitter className="h-5 w-5" />
+          <Instagram className="h-5 w-5" />
+          <Facebook className="h-5 w-5" />
         </div>
-      </form>
-
-      <div>
-        <span>F</span>
-        <span>G</span>
-        <span>I</span>
-        <span>T</span>
       </div>
 
-      <div className="flex h-1/5 items-center justify-center">
+      <div className="flex items-center justify-center">
         <span>Não tem uma conta?</span>
         <Button variant="ghost">
           <Link className="text-primary" to="/sign-up">

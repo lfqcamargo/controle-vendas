@@ -6,7 +6,7 @@ interface ErrorFieldsType {
 
 export function ErrorField({ error }: ErrorFieldsType) {
   return (
-    <div className="h-4 text-right">
+    <div className="h-2 text-right">
       {error && <p className="text-destructive">{error.message}</p>}
     </div>
   )

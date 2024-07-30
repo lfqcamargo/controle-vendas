@@ -86,87 +86,95 @@ export function SignUp() {
   return (
     <>
       <Helmet title="Login" />
-      <form
-        className="m-auto flex h-2/3 w-4/5 flex-col justify-around"
-        onSubmit={handleSubmit(handleSignIn)}
-      >
-        <div>
-          <h1 className="mb-2 text-2xl font-bold tracking-tight">Cadastro</h1>
-          <span className="lg:text-xl">
-            Por favor preencha os dados para se cadastrar
-          </span>
-        </div>
-        <div className="flex flex-col">
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="nome">Nome</Label>
-            <Input
-              className="bg-transparent"
-              type="text"
-              id="nome"
-              placeholder="Nome Completo"
-              {...register('name')}
-            />
-            <ErrorField error={errors.name} />
-          </div>
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="cpfCnpj">CPF ou CNPJ</Label>
-            <Input
-              className="bg-transparent"
-              type="text"
-              id="cpfCnpj"
-              placeholder="CPF ou CNPJ"
-              {...register('cpfCnpj')}
-            />
-            <ErrorField error={errors.cpfCnpj} />
-          </div>
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              className="bg-transparent"
-              type="text"
-              id="email"
-              placeholder="Email"
-              {...register('email')}
-            />
-            <ErrorField error={errors.email} />
-          </div>
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="password">Senha</Label>
-            <Input
-              className="bg-transparent"
-              type="password"
-              id="password"
-              placeholder="Senha"
-              {...register('password')}
-            />
-            <ErrorField error={errors.password} />
-          </div>
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="repeatPassword">Repita a Senha</Label>
-            <Input
-              className="bg-transparent"
-              type="password"
-              id="repeatPassword"
-              placeholder="Repita a Senha"
-              {...register('repeatPassword')}
-            />
-            <ErrorField error={errors.repeatPassword} />
-          </div>
-        </div>
-        <div>
-          <Button className="w-full" disabled={isSubmitting || !activeButton}>
-            CADASTRAR
-          </Button>
-        </div>
-      </form>
 
-      <div className="flex h-1/5 items-center justify-center">
-        <span>Já tem uma conta?</span>
-        <Button variant="ghost">
-          <Link className="text-primary" to="/sign-in">
-            Faça Login
-          </Link>
-        </Button>
+      <div className="p-8">
+        <div className="flex w-[350px] flex-col justify-center gap-6">
+          <div className="space-y-2 text-center">
+            <h1 className="text-2xl font-semibold tracking-tight">
+              Criar conta grátis
+            </h1>
+            <p className="text-sm text-muted-foreground">
+              Seja um parceiro e comece suas vendas!
+            </p>
+          </div>
+
+          <form className="space-y-4" onSubmit={handleSubmit(handleSignIn)}>
+            <div className="flex flex-col">
+              <div className="space-y-2">
+                <Label htmlFor="nome">Nome</Label>
+                <Input
+                  className="bg-transparent"
+                  type="text"
+                  id="nome"
+                  placeholder="Nome Completo"
+                  {...register('name')}
+                />
+                <ErrorField error={errors.name} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="cpfCnpj">CPF ou CNPJ</Label>
+                <Input
+                  className="bg-transparent"
+                  type="text"
+                  id="cpfCnpj"
+                  placeholder="CPF ou CNPJ"
+                  {...register('cpfCnpj')}
+                />
+                <ErrorField error={errors.cpfCnpj} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  className="bg-transparent"
+                  type="text"
+                  id="email"
+                  placeholder="Email"
+                  {...register('email')}
+                />
+                <ErrorField error={errors.email} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="password">Senha</Label>
+                <Input
+                  className="bg-transparent"
+                  type="password"
+                  id="password"
+                  placeholder="Senha"
+                  {...register('password')}
+                />
+                <ErrorField error={errors.password} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="repeatPassword">Repita a Senha</Label>
+                <Input
+                  className="bg-transparent"
+                  type="password"
+                  id="repeatPassword"
+                  placeholder="Repita a Senha"
+                  {...register('repeatPassword')}
+                />
+                <ErrorField error={errors.repeatPassword} />
+              </div>
+            </div>
+            <div>
+              <Button
+                className="w-full"
+                disabled={isSubmitting || !activeButton}
+              >
+                CADASTRAR
+              </Button>
+            </div>
+          </form>
+
+          <div className="flex items-center justify-center">
+            <span>Já tem uma conta?</span>
+            <Button variant="ghost">
+              <Link className="text-primary" to="/sign-in">
+                Faça Login
+              </Link>
+            </Button>
+          </div>
+        </div>
       </div>
     </>
   )

@@ -51,23 +51,24 @@ export function RecoveryPassword() {
   return (
     <>
       <Helmet title="Recuperar senha" />
-      <div className="flex h-full w-full flex-col items-center justify-center">
+      <div className="flex w-[350px] flex-col justify-center gap-6">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight">
+            Recuperar senha
+          </h1>
+          <span className="text-sm text-muted-foreground">
+            Informe o e-mail, associado à sua conta para alterar sua senha.
+          </span>
+        </div>
         <form
-          className="flex w-2/5 flex-col gap-5"
+          className="space-y-5"
           onSubmit={handleSubmit(handleRecoveryPassword)}
         >
-          <div>
-            <h1 className="mb-2 text-2xl font-bold tracking-tight">
-              Recuperar senha
-            </h1>
-            <span className="lg:text-xl">
-              Informe o e-mail, associado à sua conta para alterar sua senha.
-            </span>
-          </div>
-          <div>
+          <div className="space-y-1">
             <Input placeholder="Email" {...register('email')} />
+            <ErrorField error={errors.email} />
           </div>
-          <ErrorField error={errors.email} />
+
           <Button className="w-full" disabled={isSubmitting || activeButton}>
             Enviar
           </Button>
