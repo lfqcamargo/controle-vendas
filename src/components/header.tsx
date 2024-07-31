@@ -1,19 +1,34 @@
+import { Cylinder, Home, Wallet } from 'lucide-react'
+
 import { AccountMenu } from './account-menu'
+import { NavLink } from './nav-link'
 import { ThemeToggle } from './theme/theme-toggle'
+import { Separator } from './ui/separator'
 
 export function Header() {
   return (
-    <header className="flex flex-row items-center justify-between border-b p-2">
-      <div>
-        <p>esquerdo</p>
+    <div className="border-b">
+      <div className="flex h-16 items-center gap-6 px-6">
+        <Cylinder className="h-6 w-6" />
+
+        <Separator orientation="vertical" className="h-6" />
+
+        <nav className="flex items-center space-x-4 lg:space-x-6">
+          <NavLink to="/">
+            <Home className="h-4 w-4" />
+            Início
+          </NavLink>
+          <NavLink to="/selles">
+            <Wallet className="h-4 w-4" />
+            Vendas
+          </NavLink>
+        </nav>
+
+        <div className="ml-auto flex items-center gap-2">
+          <ThemeToggle />
+          <AccountMenu />
+        </div>
       </div>
-      <div>
-        <p>centro</p>
-      </div>
-      <div className="flex flex-row items-center gap-2">
-        <ThemeToggle />
-        <AccountMenu />
-      </div>
-    </header>
+    </div>
   )
 }
