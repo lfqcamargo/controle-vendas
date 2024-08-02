@@ -1,0 +1,756 @@
+{
+  "groups": [
+    {
+      "id": "1",
+      "description": "Vinho",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "2",
+      "description": "Queijo",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "3",
+      "description": "Pão",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "4",
+      "description": "Salgado",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "5",
+      "description": "Cerveja",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "6",
+      "description": "Água",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "7",
+      "description": "Refrigerante",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "8",
+      "description": "Bolo",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "9",
+      "description": "Frutas",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "10",
+      "description": "Legumes",
+      "dateCreated": "01/06/2024"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "description": "Vinho Madeira",
+      "group": "Vinho",
+      "price": "22.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "2",
+      "description": "Vinho Cabernet Sauvignon",
+      "group": "Vinho",
+      "price": "23.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "3",
+      "description": "Vinho Merlot",
+      "group": "Vinho",
+      "price": "25.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "4",
+      "description": "Vinho Malbec",
+      "group": "Vinho",
+      "price": "26.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "5",
+      "description": "Vinho Chardonnay",
+      "group": "Vinho",
+      "price": "28.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "6",
+      "description": "Vinho Ros\u00e9",
+      "group": "Vinho",
+      "price": "29.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "7",
+      "description": "Vinho Pinot Noir",
+      "group": "Vinho",
+      "price": "31.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "8",
+      "description": "Vinho Sauvignon Blanc",
+      "group": "Vinho",
+      "price": "32.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "9",
+      "description": "Vinho Tinto Table",
+      "group": "Vinho",
+      "price": "34.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "10",
+      "description": "Vinho Branco Gelado",
+      "group": "Vinho",
+      "price": "35.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "11",
+      "description": "Queijo Cheddar",
+      "group": "Queijo",
+      "price": "22.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "12",
+      "description": "Queijo Gouda",
+      "group": "Queijo",
+      "price": "23.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "13",
+      "description": "Queijo Parmesao",
+      "group": "Queijo",
+      "price": "25.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "14",
+      "description": "Queijo Brie",
+      "group": "Queijo",
+      "price": "26.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "15",
+      "description": "Queijo Camembert",
+      "group": "Queijo",
+      "price": "28.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "16",
+      "description": "Queijo Roquefort",
+      "group": "Queijo",
+      "price": "29.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "17",
+      "description": "Queijo Provolone",
+      "group": "Queijo",
+      "price": "31.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "18",
+      "description": "Queijo Mozzarella",
+      "group": "Queijo",
+      "price": "32.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "19",
+      "description": "Queijo Gorgonzola",
+      "group": "Queijo",
+      "price": "34.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "20",
+      "description": "Queijo Ricotta",
+      "group": "Queijo",
+      "price": "35.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "21",
+      "description": "Pao Frances",
+      "group": "P\u00e3o",
+      "price": "22.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "22",
+      "description": "Pao Integral",
+      "group": "P\u00e3o",
+      "price": "23.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "23",
+      "description": "Pao de Centeio",
+      "group": "P\u00e3o",
+      "price": "25.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "24",
+      "description": "Pao de Alho",
+      "group": "P\u00e3o",
+      "price": "26.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "25",
+      "description": "Pao Sourdough",
+      "group": "P\u00e3o",
+      "price": "28.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "26",
+      "description": "Pao Ciabatta",
+      "group": "P\u00e3o",
+      "price": "29.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "27",
+      "description": "Pao de Queijo",
+      "group": "P\u00e3o",
+      "price": "31.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "28",
+      "description": "Pao Australiano",
+      "group": "P\u00e3o",
+      "price": "32.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "29",
+      "description": "Pao Pita",
+      "group": "P\u00e3o",
+      "price": "34.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "30",
+      "description": "Pao de Hamburguer",
+      "group": "P\u00e3o",
+      "price": "35.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "31",
+      "description": "Coxinha",
+      "group": "Salgado",
+      "price": "22.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "32",
+      "description": "Empada de Frango",
+      "group": "Salgado",
+      "price": "23.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "33",
+      "description": "Quibe",
+      "group": "Salgado",
+      "price": "25.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "34",
+      "description": "Pasteis de Carne",
+      "group": "Salgado",
+      "price": "26.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "35",
+      "description": "Enroladinho de Salsicha",
+      "group": "Salgado",
+      "price": "28.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "36",
+      "description": "Risole de Queijo",
+      "group": "Salgado",
+      "price": "29.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "37",
+      "description": "Bolinho de Bacalhau",
+      "group": "Salgado",
+      "price": "31.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "38",
+      "description": "Esfiha de Carne",
+      "group": "Salgado",
+      "price": "32.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "39",
+      "description": "Pastel de Queijo",
+      "group": "Salgado",
+      "price": "34.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "40",
+      "description": "Croquete de Carne",
+      "group": "Salgado",
+      "price": "35.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "41",
+      "description": "Cerveja Pilsen",
+      "group": "Cerveja",
+      "price": "22.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "42",
+      "description": "Cerveja Lager",
+      "group": "Cerveja",
+      "price": "23.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "43",
+      "description": "Cerveja Ale",
+      "group": "Cerveja",
+      "price": "25.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "44",
+      "description": "Cerveja Stout",
+      "group": "Cerveja",
+      "price": "26.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "45",
+      "description": "Cerveja IPA",
+      "group": "Cerveja",
+      "price": "28.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "46",
+      "description": "Cerveja Weiss",
+      "group": "Cerveja",
+      "price": "29.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "47",
+      "description": "Cerveja Bock",
+      "group": "Cerveja",
+      "price": "31.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "48",
+      "description": "Cerveja Pale Ale",
+      "group": "Cerveja",
+      "price": "32.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "49",
+      "description": "Cerveja Red Ale",
+      "group": "Cerveja",
+      "price": "34.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "50",
+      "description": "Cerveja Saison",
+      "group": "Cerveja",
+      "price": "35.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "51",
+      "description": "Agua Mineral Natural",
+      "group": "\u00c1gua",
+      "price": "22.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "52",
+      "description": "Agua com Gas",
+      "group": "\u00c1gua",
+      "price": "23.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "53",
+      "description": "Agua Tonica",
+      "group": "\u00c1gua",
+      "price": "25.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "54",
+      "description": "Agua de Coco",
+      "group": "\u00c1gua",
+      "price": "26.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "55",
+      "description": "Agua Aromatizada de Limao",
+      "group": "\u00c1gua",
+      "price": "28.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "56",
+      "description": "Agua Aromatizada de Laranja",
+      "group": "\u00c1gua",
+      "price": "29.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "57",
+      "description": "Agua Alcalina",
+      "group": "\u00c1gua",
+      "price": "31.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "58",
+      "description": "Agua Isotonica",
+      "group": "\u00c1gua",
+      "price": "32.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "59",
+      "description": "Agua Purificada",
+      "group": "\u00c1gua",
+      "price": "34.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "60",
+      "description": "Agua Saborizada",
+      "group": "\u00c1gua",
+      "price": "35.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "61",
+      "description": "Refrigerante de Cola",
+      "group": "Refrigerante",
+      "price": "22.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "62",
+      "description": "Refrigerante de Laranja",
+      "group": "Refrigerante",
+      "price": "23.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "63",
+      "description": "Refrigerante de Uva",
+      "group": "Refrigerante",
+      "price": "25.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "64",
+      "description": "Refrigerante de Limao",
+      "group": "Refrigerante",
+      "price": "26.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "65",
+      "description": "Refrigerante de Guaran\u00e1",
+      "group": "Refrigerante",
+      "price": "28.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "66",
+      "description": "Refrigerante Diet",
+      "group": "Refrigerante",
+      "price": "29.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "67",
+      "description": "Refrigerante Zero",
+      "group": "Refrigerante",
+      "price": "31.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "68",
+      "description": "Refrigerante Light",
+      "group": "Refrigerante",
+      "price": "32.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "69",
+      "description": "Refrigerante de Tangerina",
+      "group": "Refrigerante",
+      "price": "34.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "70",
+      "description": "Refrigerante de Cereja",
+      "group": "Refrigerante",
+      "price": "35.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "71",
+      "description": "Bolo de Chocolate",
+      "group": "Bolo",
+      "price": "22.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "72",
+      "description": "Bolo de Cenoura",
+      "group": "Bolo",
+      "price": "23.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "73",
+      "description": "Bolo de Fuba",
+      "group": "Bolo",
+      "price": "25.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "74",
+      "description": "Bolo de Banana",
+      "group": "Bolo",
+      "price": "26.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "75",
+      "description": "Bolo de Red Velvet",
+      "group": "Bolo",
+      "price": "28.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "76",
+      "description": "Bolo de Limao",
+      "group": "Bolo",
+      "price": "29.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "77",
+      "description": "Bolo de Laranja",
+      "group": "Bolo",
+      "price": "31.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "78",
+      "description": "Bolo de Coco",
+      "group": "Bolo",
+      "price": "32.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "79",
+      "description": "Bolo de Abacaxi",
+      "group": "Bolo",
+      "price": "34.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "80",
+      "description": "Bolo Opera",
+      "group": "Bolo",
+      "price": "35.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "81",
+      "description": "Maca Gala",
+      "group": "Frutas",
+      "price": "22.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "82",
+      "description": "Banana Prata",
+      "group": "Frutas",
+      "price": "23.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "83",
+      "description": "Laranja Valencia",
+      "group": "Frutas",
+      "price": "25.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "84",
+      "description": "Manga Tommy",
+      "group": "Frutas",
+      "price": "26.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "85",
+      "description": "Abacaxi Hawaiano",
+      "group": "Frutas",
+      "price": "28.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "86",
+      "description": "Kiwi",
+      "group": "Frutas",
+      "price": "29.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "87",
+      "description": "Morango",
+      "group": "Frutas",
+      "price": "31.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "88",
+      "description": "Uva It\u00e1lia",
+      "group": "Frutas",
+      "price": "32.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "89",
+      "description": "Melancia",
+      "group": "Frutas",
+      "price": "34.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "90",
+      "description": "Pessego",
+      "group": "Frutas",
+      "price": "35.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "91",
+      "description": "Cenoura",
+      "group": "Legumes",
+      "price": "22.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "92",
+      "description": "Tomate",
+      "group": "Legumes",
+      "price": "23.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "93",
+      "description": "Batata",
+      "group": "Legumes",
+      "price": "25.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "94",
+      "description": "Cebola",
+      "group": "Legumes",
+      "price": "26.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "95",
+      "description": "Alface",
+      "group": "Legumes",
+      "price": "28.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "96",
+      "description": "Couve",
+      "group": "Legumes",
+      "price": "29.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "97",
+      "description": "Brocolis",
+      "group": "Legumes",
+      "price": "31.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "98",
+      "description": "Pepino",
+      "group": "Legumes",
+      "price": "32.50",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "99",
+      "description": "Pimentao",
+      "group": "Legumes",
+      "price": "34.00",
+      "dateCreated": "01/06/2024"
+    },
+    {
+      "id": "100",
+      "description": "Abobrinha",
+      "group": "Legumes",
+      "price": "35.50",
+      "dateCreated": "01/06/2024"
+    }
+  ]
+}

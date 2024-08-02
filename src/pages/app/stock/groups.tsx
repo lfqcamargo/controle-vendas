@@ -1,6 +1,16 @@
+import { DialogTitle } from '@radix-ui/react-dialog'
+
 import { Filter } from '@/components/filter'
 import { Pagination } from '@/components/pagination'
 import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import {
   Table,
   TableBody,
@@ -58,7 +68,24 @@ export function Groups() {
                   <TableCell>{groups.description}</TableCell>
                   <TableCell>{groups.dateCreated}</TableCell>
                   <TableCell>
-                    <Button variant="success">Editar</Button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="success">Editar</Button>
+                      </DialogTrigger>
+                      <DialogContent>
+                        <DialogHeader>
+                          <DialogTitle>Editar Grupo</DialogTitle>
+                          <form className="flex flex-col gap-2">
+                            <Label>Descrição</Label>
+                            <Input />
+                            <div className="flex w-full flex-row items-center justify-end gap-2">
+                              <Button variant="success">Confirmar</Button>
+                              <Button variant="destructive">Cancelar</Button>
+                            </div>
+                          </form>
+                        </DialogHeader>
+                      </DialogContent>
+                    </Dialog>
                   </TableCell>
                   <TableCell>
                     <Button variant="destructive">Deletar</Button>
