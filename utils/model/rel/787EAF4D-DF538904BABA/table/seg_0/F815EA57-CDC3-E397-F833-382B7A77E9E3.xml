@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F815EA57-CDC3-E397-F833-382B7A77E9E3" name="typemoviments">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:13:46 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="C9CF61ED-9B42-8877-F897-9AC9F0D77924">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:25:49 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT018</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="21DD3408-E7A6-DA4C-C16A-D071F6DBC896">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:25:49 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="type_moviment" id="C552315A-21A2-B995-645E-95B654EE0C9B">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:27:55 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+<ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7DF620F2-C0F5-D515-5B4D-FCDA1D0B9E82" name="typemoviments_PK">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:25:49 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C9CF61ED-9B42-8877-F897-9AC9F0D77924"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0FB91094-A8E8-3A42-8EA8-8F149B62AB4A" name="typemoviments__UN">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:28:19 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21DD3408-E7A6-DA4C-C16A-D071F6DBC896"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

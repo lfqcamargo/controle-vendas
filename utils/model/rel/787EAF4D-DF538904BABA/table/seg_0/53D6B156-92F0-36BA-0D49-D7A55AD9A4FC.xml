@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="53D6B156-92F0-36BA-0D49-D7A55AD9A4FC" name="users">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:12:16 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="B78D477B-6B83-C8AB-C352-489DFD2FBEE7">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:17:08 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="BF09BB06-D665-9557-F8EF-4F586C0D1A0E">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:17:08 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cpf_cnpj" id="808FB582-9243-0DD6-B1FD-36310DF41959">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:17:08 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14 CHAR</dataTypeSize>
+<ownDataTypeParameters>14 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="B49F1D62-0E35-576F-E39D-BA64C1C58DC0">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:17:08 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="5C6EF8DF-E78C-B5B4-DB30-72324F5D95C6">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:17:08 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date_created" id="6A179AC6-5040-E923-B78A-3478497C1723">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:17:08 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="last_login" id="23580106-6C60-0AEB-1FE2-18BB8CB68DCE">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:17:08 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B6241468-E6D6-B77A-C8A4-B12187D56695" name="users_PK">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:17:08 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B78D477B-6B83-C8AB-C352-489DFD2FBEE7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="68F57C26-1BF9-A375-A38D-BEBEC5AACB34" name="users__UN">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:20:56 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B49F1D62-0E35-576F-E39D-BA64C1C58DC0"/>
+<colUsage columnID="808FB582-9243-0DD6-B1FD-36310DF41959"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

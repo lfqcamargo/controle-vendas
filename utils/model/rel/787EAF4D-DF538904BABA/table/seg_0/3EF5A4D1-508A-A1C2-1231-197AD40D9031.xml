@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3EF5A4D1-508A-A1C2-1231-197AD40D9031" name="products">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:12:32 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="users_id" id="A55D62D3-C32F-6F97-8002-85E0AF4F7B4B">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:21:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="44395334-9549-65C9-6C72-2DD28F4EE310" referredColumn="A8B85C8C-2318-8190-F19A-B370082F4F5D"/>
+</associations>
+</Column>
+<Column name="id" id="5E3DA090-38F8-7BC8-BD50-4EA3A29EB1BA">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:31:52 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="groups_id" id="21934DD6-F123-8932-825D-911061D84B99">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:21:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="44395334-9549-65C9-6C72-2DD28F4EE310" referredColumn="7EEF0E6D-BDAB-8E00-A564-D293D5AD50B2"/>
+</associations>
+</Column>
+<Column name="description" id="E0B11DEB-ED84-6F0B-9374-D8797BD71AE3">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:23:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="price_buy" id="C45DD603-16D0-318B-AF4B-BADC6D3DE7BF">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:23:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="price_seller" id="95649B12-B1AD-DFFD-3797-6FA34D1D8D0A">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:23:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2DB61D86-3B45-687C-EDF2-F87A90B78D42" name="products_PK">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:21:56 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A55D62D3-C32F-6F97-8002-85E0AF4F7B4B"/>
+<colUsage columnID="5E3DA090-38F8-7BC8-BD50-4EA3A29EB1BA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A7FE5F94-95DC-B428-BE4E-2A1DD9F67A30" name="products_groups_FK">
+<createdBy>Lucas</createdBy>
+<createdTime>2024-08-03 11:21:27 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A55D62D3-C32F-6F97-8002-85E0AF4F7B4B"/>
+<colUsage columnID="21934DD6-F123-8932-825D-911061D84B99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
