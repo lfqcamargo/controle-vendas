@@ -1,10 +1,13 @@
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useMutation } from '@tanstack/react-query'
 import { cnpj, cpf } from 'cpf-cnpj-validator'
 import { Helmet } from 'react-helmet-async'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 import { z } from 'zod'
+
+import { registerUser } from '@/api/register-user'
 
 import { Button } from '../../components/ui/button'
 import { Input } from '../../components/ui/input'
@@ -52,9 +55,19 @@ export function SignUp() {
     resolver: zodResolver(signInForm),
   })
 
+  const { mutateAsync: registerUserFn } = useMutation({
+    mutationFn: registerUser,
+  })
+
   async function handleSignIn(data: SignInForm) {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      await registerUserFn({
+        name: data.name,
+        cpfCnpj: data.cpfCnpj,
+        email: data.email,
+        password: data.password,
+      })
+
       reset()
       navigate(`/sign-in?email=${data.email}`)
       toast.success('Restaurante cadastrado com sucesso!')

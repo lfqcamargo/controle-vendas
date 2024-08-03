@@ -45,7 +45,7 @@ export function SignIn() {
       await new Promise((resolve) => setTimeout(resolve, 1000))
       if (
         data.email !== 'lfqcamargo@gmail.com' ||
-        data.password !== '12345678'
+        data.password !== '123456789'
       ) {
         throw new Error()
       }

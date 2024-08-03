@@ -1,16 +1,8 @@
-import { DialogTitle } from '@radix-ui/react-dialog'
+import { useQuery } from '@tanstack/react-query'
 
+import { getProducts } from '@/api/get-products'
 import { Filter } from '@/components/filter'
 import { Pagination } from '@/components/pagination'
-import { Button } from '@/components/ui/button'
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTrigger,
-} from '@/components/ui/dialog'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 import {
   Table,
   TableBody,
@@ -21,38 +13,15 @@ import {
   TableRow,
 } from '@/components/ui/table'
 
-const groups = [
-  {
-    id: '001',
-    description: 'Vinho Madeira',
-    group: 'Vinho',
-    price: '50.00',
-    dateCreated: '22/11/1995',
-  },
-  {
-    id: '002',
-    description: 'Mussarela',
-    group: 'Queijo',
-    price: '35.60',
-    dateCreated: '22/11/1995',
-  },
-  {
-    id: '003',
-    description: 'Pão de Forma',
-    group: 'Pão',
-    price: '1.00',
-    dateCreated: '22/11/1995',
-  },
-  {
-    id: '004',
-    description: 'Coxinha',
-    group: 'Salgado',
-    price: '6.00',
-    dateCreated: '22/11/1995',
-  },
-]
+import { ProductTableRow } from './products-table-row'
 
 export function Products() {
+  const { data: result } = useQuery({
+    queryKey: ['products'],
+    queryFn: getProducts,
+  })
+
+  console.log(result)
   return (
     <>
       <div className="m-auto w-full">
@@ -60,7 +29,6 @@ export function Products() {
         <div className="m-auto w-full">
           <Table className="">
             <TableHeader>
-              <TableRow></TableRow>
               <TableRow>
                 <TableHead className="w-[100px]">ID</TableHead>
                 <TableHead>Produto</TableHead>
@@ -72,38 +40,10 @@ export function Products() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {groups.map((groups) => (
-                <TableRow key={groups.id}>
-                  <TableCell className="font-medium">{groups.id}</TableCell>
-                  <TableCell>{groups.description}</TableCell>
-                  <TableCell>{groups.group}</TableCell>
-                  <TableCell>{groups.price}</TableCell>
-                  <TableCell>{groups.dateCreated}</TableCell>
-                  <TableCell>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button variant="success">Editar</Button>
-                      </DialogTrigger>
-                      <DialogContent>
-                        <DialogHeader>
-                          <DialogTitle>Editar Grupo</DialogTitle>
-                          <form className="flex flex-col gap-2">
-                            <Label>Descrição</Label>
-                            <Input />
-                            <div className="flex w-full flex-row items-center justify-end gap-2">
-                              <Button variant="success">Confirmar</Button>
-                              <Button variant="destructive">Cancelar</Button>
-                            </div>
-                          </form>
-                        </DialogHeader>
-                      </DialogContent>
-                    </Dialog>
-                  </TableCell>
-                  <TableCell>
-                    <Button variant="destructive">Deletar</Button>
-                  </TableCell>
-                </TableRow>
-              ))}
+              {result &&
+                result.map((product) => {
+                  return <ProductTableRow key={product.id} product={product} />
+                })}
             </TableBody>
             <TableFooter>
               <TableRow>

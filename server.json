@@ -1,4 +1,20 @@
 {
+  "users": [
+    {
+      "id": "1",
+      "name": "Lucas Camargo",
+      "cpfCnpj": "43210055823",
+      "email": "lfqcamargo@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "5eed",
+      "name": "Lucas Fernando Quinato de Camargo",
+      "cpfCnpj": "43210055823",
+      "email": "lucas.f_95@hotmail.com",
+      "password": "123456789"
+    }
+  ],
   "groups": [
     {
       "id": "1",
@@ -89,7 +105,7 @@
     },
     {
       "id": "6",
-      "description": "Vinho Ros\u00e9",
+      "description": "Vinho Rosé",
       "group": "Vinho",
       "price": "29.50",
       "dateCreated": "01/06/2024"
@@ -195,70 +211,70 @@
     {
       "id": "21",
       "description": "Pao Frances",
-      "group": "P\u00e3o",
+      "group": "Pão",
       "price": "22.00",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "22",
       "description": "Pao Integral",
-      "group": "P\u00e3o",
+      "group": "Pão",
       "price": "23.50",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "23",
       "description": "Pao de Centeio",
-      "group": "P\u00e3o",
+      "group": "Pão",
       "price": "25.00",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "24",
       "description": "Pao de Alho",
-      "group": "P\u00e3o",
+      "group": "Pão",
       "price": "26.50",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "25",
       "description": "Pao Sourdough",
-      "group": "P\u00e3o",
+      "group": "Pão",
       "price": "28.00",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "26",
       "description": "Pao Ciabatta",
-      "group": "P\u00e3o",
+      "group": "Pão",
       "price": "29.50",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "27",
       "description": "Pao de Queijo",
-      "group": "P\u00e3o",
+      "group": "Pão",
       "price": "31.00",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "28",
       "description": "Pao Australiano",
-      "group": "P\u00e3o",
+      "group": "Pão",
       "price": "32.50",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "29",
       "description": "Pao Pita",
-      "group": "P\u00e3o",
+      "group": "Pão",
       "price": "34.00",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "30",
       "description": "Pao de Hamburguer",
-      "group": "P\u00e3o",
+      "group": "Pão",
       "price": "35.50",
       "dateCreated": "01/06/2024"
     },
@@ -405,70 +421,70 @@
     {
       "id": "51",
       "description": "Agua Mineral Natural",
-      "group": "\u00c1gua",
+      "group": "Água",
       "price": "22.00",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "52",
       "description": "Agua com Gas",
-      "group": "\u00c1gua",
+      "group": "Água",
       "price": "23.50",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "53",
       "description": "Agua Tonica",
-      "group": "\u00c1gua",
+      "group": "Água",
       "price": "25.00",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "54",
       "description": "Agua de Coco",
-      "group": "\u00c1gua",
+      "group": "Água",
       "price": "26.50",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "55",
       "description": "Agua Aromatizada de Limao",
-      "group": "\u00c1gua",
+      "group": "Água",
       "price": "28.00",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "56",
       "description": "Agua Aromatizada de Laranja",
-      "group": "\u00c1gua",
+      "group": "Água",
       "price": "29.50",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "57",
       "description": "Agua Alcalina",
-      "group": "\u00c1gua",
+      "group": "Água",
       "price": "31.00",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "58",
       "description": "Agua Isotonica",
-      "group": "\u00c1gua",
+      "group": "Água",
       "price": "32.50",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "59",
       "description": "Agua Purificada",
-      "group": "\u00c1gua",
+      "group": "Água",
       "price": "34.00",
       "dateCreated": "01/06/2024"
     },
     {
       "id": "60",
       "description": "Agua Saborizada",
-      "group": "\u00c1gua",
+      "group": "Água",
       "price": "35.50",
       "dateCreated": "01/06/2024"
     },
@@ -502,7 +518,7 @@
     },
     {
       "id": "65",
-      "description": "Refrigerante de Guaran\u00e1",
+      "description": "Refrigerante de Guaraná",
       "group": "Refrigerante",
       "price": "28.00",
       "dateCreated": "01/06/2024"
@@ -663,7 +679,7 @@
     },
     {
       "id": "88",
-      "description": "Uva It\u00e1lia",
+      "description": "Uva Itália",
       "group": "Frutas",
       "price": "32.50",
       "dateCreated": "01/06/2024"

@@ -1,4 +1,7 @@
+import { useQuery } from '@tanstack/react-query'
 import { ChevronDown } from 'lucide-react'
+
+import { getProfile } from '@/api/get-profile'
 
 import { Button } from './ui/button'
 import {
@@ -9,8 +12,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu'
+import { Skeleton } from './ui/skeleton'
 
 export function AccountMenu() {
+  const { data: profile, isLoading: isLoadingProfile } = useQuery({
+    queryKey: ['profile'],
+    queryFn: getProfile,
+  })
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -25,10 +34,19 @@ export function AccountMenu() {
 
       <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuLabel className="flex flex-col">
-          <span>Lucas Fernando</span>
-          <span className="text-xs font-normal text-muted-foreground">
-            lfqcamargo@gmail.com
-          </span>
+          {isLoadingProfile ? (
+            <div className="space-y-1.5">
+              <Skeleton className="h-4 w-32" />
+              <Skeleton className="h-3 w-24" />
+            </div>
+          ) : (
+            <>
+              <span>{profile?.name}</span>
+              <span className="text-xs font-normal text-muted-foreground">
+                {profile?.email}
+              </span>
+            </>
+          )}
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
 
