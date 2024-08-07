@@ -1,19 +1,24 @@
 import { api } from '@/lib/axios'
 
-interface getProductsResponse {
-  id: string
-  description: string
-  group: string
-  price: string
-  dateCreated: string
+export interface GetProductsParams {
+  pageIndex?: number | null
 }
 
-export async function getProducts(): Promise<getProductsResponse[]> {
-  const response = await api.get('/products', {
-    params: {
-      pageIndex: 0,
-    },
-  })
+interface GetProductsResponse {
+  data: {
+    id: string
+    description: string
+    group: string
+    priceBuy: string
+    priceSell: string
+    dateCreated: string
+  }[]
+}
+
+export async function getProducts({
+  pageIndex,
+}: GetProductsParams): Promise<GetProductsResponse> {
+  const response = await api.get(`/products?_page=${pageIndex}`)
 
   return response.data
 }

@@ -16,7 +16,8 @@ interface ProductTableRowProps {
     id: string
     description: string
     group: string
-    price: string
+    priceBuy: string
+    priceSell: string
     dateCreated: string
   }
 }
@@ -27,7 +28,8 @@ export function ProductTableRow({ product }: ProductTableRowProps) {
       <TableCell className="font-medium">{product.id}</TableCell>
       <TableCell>{product.description}</TableCell>
       <TableCell>{product.group}</TableCell>
-      <TableCell>{product.price}</TableCell>
+      <TableCell>{product.priceBuy}</TableCell>
+      <TableCell>{product.priceSell}</TableCell>
       <TableCell>{product.dateCreated}</TableCell>
       <TableCell>
         <Dialog>

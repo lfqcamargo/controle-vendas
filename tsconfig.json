@@ -35,5 +35,8 @@
     {
       "path": "./tsconfig.node.json"
     }
-  ]
+  ],
+  "rules": {
+    "camelcase": "off"
+  }
 }
