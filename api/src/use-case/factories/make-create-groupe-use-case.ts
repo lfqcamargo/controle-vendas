@@ -2,7 +2,7 @@ import { PrismaUsersRepository } from '@/repositories/prisma/prisma-users-reposi
 
 export function makeCreateGroupUseCase() {
   const userRepository = new PrismaUsersRepository()
-  const CreateGroupUseCase = new CreateGroupUseCase(userRepository)
+  const createGroupUseCase = new CreateGroupUseCase(userRepository)
 
-  return CreateGroupUseCase
+  return createGroupUseCase
 }

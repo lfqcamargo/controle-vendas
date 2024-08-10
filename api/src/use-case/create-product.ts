@@ -1,3 +1,4 @@
+import { ProductAlreadyExistsError } from '@/errors/product-already-exists-error'
 import { ProductsRepository } from '@/repositories/products-repository'
 
 interface CreateProductUseCaseRequest {
@@ -8,7 +9,7 @@ interface CreateProductUseCaseRequest {
   priceSell: number
 }
 
-export class CreateGroupUseCase {
+export class CreateProductUseCase {
   constructor(private productsRepository: ProductsRepository) {}
 
   async execute({
@@ -18,6 +19,13 @@ export class CreateGroupUseCase {
     priceBuy,
     priceSell,
   }: CreateProductUseCaseRequest) {
+    const productAlreadyCreated =
+      await this.productsRepository.findByDescription(userId, description)
+
+    if (productAlreadyCreated) {
+      throw new ProductAlreadyExistsError()
+    }
+
     const product = await this.productsRepository.create({
       user_id: userId,
       group_id: groupId,

@@ -6,8 +6,23 @@ import { ProductsRepository } from '../products-repository'
 export class InMemoryProductsRepository implements ProductsRepository {
   public items: Product[] = []
 
-  findById(id: string): Promise<Product | null> {
-    throw new Error(`${id} Method not implemented.`)
+  async findByDescription(userId: string, description: string) {
+    const product =
+      this.items.find(
+        (product) =>
+          product.user_id === userId && product.description === description,
+      ) || null
+
+    return product
+  }
+
+  async findById(userId: string, id: number) {
+    const product =
+      this.items.find(
+        (product) => product.user_id === userId && product.id === id,
+      ) || null
+
+    return product
   }
 
   async create(data: Prisma.ProductUncheckedCreateInput) {

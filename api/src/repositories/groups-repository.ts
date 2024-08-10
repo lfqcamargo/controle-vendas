@@ -1,6 +1,7 @@
 import { Group, Prisma } from '@prisma/client'
 
 export interface GroupsRepository {
-  findById(id: string): Promise<Group | null>
+  findByDescription(userId: string, description: string): Promise<Group | null>
+  findById(userId: string, id: number): Promise<Group | null>
   create(data: Prisma.GroupUncheckedCreateInput): Promise<Group>
 }

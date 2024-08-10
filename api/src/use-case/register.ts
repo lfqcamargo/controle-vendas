@@ -1,6 +1,7 @@
 import { hash } from 'bcryptjs'
 
-import { UserAlreadyExistsError } from '@/errors/user-already-exists-error'
+import { CPFCNPJAlreadyExistsError } from '@/errors/cpfcnpj-already-exists-error'
+import { EmailAlreadyExistsError } from '@/errors/email-already-exists-error'
 import { UsersRepository } from '@/repositories/users-repository'
 
 interface RegisterUseCaseRequest {
@@ -17,7 +18,14 @@ export class RegisterUseCase {
     const userWithSameEmail = await this.usersRepository.findByEmail(email)
 
     if (userWithSameEmail) {
-      throw new UserAlreadyExistsError()
+      throw new EmailAlreadyExistsError()
+    }
+
+    const userWithSameCPFCNPJ =
+      await this.usersRepository.findByCPFCNPJ(cpf_cnpj)
+
+    if (userWithSameCPFCNPJ) {
+      throw new CPFCNPJAlreadyExistsError()
     }
 
     const password_hash = await hash(password, 6)

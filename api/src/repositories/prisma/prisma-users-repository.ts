@@ -1,11 +1,21 @@
-import { Prisma, User } from '@prisma/client'
+import { Prisma } from '@prisma/client'
 
 import { prisma } from '@/lib/prisma'
 
 import { UsersRepository } from '../users-repository'
 
 export class PrismaUsersRepository implements UsersRepository {
-  async findById(id: string): Promise<User | null> {
+  async findByCPFCNPJ(cpfCnpj: string) {
+    const user = await prisma.user.findUnique({
+      where: {
+        cpf_cnpj: cpfCnpj,
+      },
+    })
+
+    return user
+  }
+
+  async findById(id: string) {
     const user = await prisma.user.findUnique({
       where: {
         id,
