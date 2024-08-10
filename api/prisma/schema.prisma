@@ -16,8 +16,8 @@ model User {
   date_created DateTime  @default(now())
   last_login   DateTime?
 
-  Group    Group[]
-  Products Products[]
+  Group   Group[]
+  Product Product[]
 
   @@map("users")
 }
@@ -29,12 +29,12 @@ model Group {
   user    User   @relation(fields: [user_id], references: [id])
   user_id String
 
-  Products Products[]
+  Product Product[]
 
   @@map("groups")
 }
 
-model Products {
+model Product {
   id           Int      @id @default(autoincrement())
   description  String
   price_buy    Float
