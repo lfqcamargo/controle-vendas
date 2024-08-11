@@ -1,16 +1,16 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 
+import { InMemoryGroupsRepository } from '@//modules/stock/repositories/in-memory/in-memory-groups-repository'
+import { CreateGroupService } from '@/modules/stock/services/create-group'
 import { GroupAlreadyExistsError } from '@/shared/errors/group-already-exists-error'
-import { InMemoryGroupsRepository } from '@/repositories/in-memory/in-memory-groups-repository'
-import { CreateGroupUseCase } from '@/modules/stock/services/create-group'
 
 let groupsRepository: InMemoryGroupsRepository
-let sut: CreateGroupUseCase
+let sut: CreateGroupService
 
 describe('Create Group Use Case', () => {
   beforeEach(() => {
     groupsRepository = new InMemoryGroupsRepository()
-    sut = new CreateGroupUseCase(groupsRepository)
+    sut = new CreateGroupService(groupsRepository)
   })
 
   it('should register a new group', async () => {

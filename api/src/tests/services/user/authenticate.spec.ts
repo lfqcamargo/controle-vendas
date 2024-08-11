@@ -1,17 +1,17 @@
 import { hash } from 'bcryptjs'
 import { beforeEach, describe, expect, it } from 'vitest'
 
+import { InMemoryUsersRepository } from '@/modules/user/repositories/in-memory/in-memory-users-repository'
+import { AuthenticateService } from '@/modules/user/services/authenticate'
 import { InvalidCredentialsError } from '@/shared/errors/invalid-credentials-error'
-import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
-import { AuthenticateUseCase } from '@/modules/user/services/authenticate'
 
 let usersRepository: InMemoryUsersRepository
-let sut: AuthenticateUseCase
+let sut: AuthenticateService
 
 describe('Register Use Case', () => {
   beforeEach(() => {
     usersRepository = new InMemoryUsersRepository()
-    sut = new AuthenticateUseCase(usersRepository)
+    sut = new AuthenticateService(usersRepository)
   })
 
   it('should register a new user', async () => {

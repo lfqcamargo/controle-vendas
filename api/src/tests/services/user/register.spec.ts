@@ -1,18 +1,18 @@
 import { compare, hash } from 'bcryptjs'
 import { beforeEach, describe, expect, it } from 'vitest'
 
+import { InMemoryUsersRepository } from '@/modules/user/repositories/in-memory/in-memory-users-repository'
+import { RegisterService } from '@/modules/user/services/register'
 import { CPFCNPJAlreadyExistsError } from '@/shared/errors/cpfcnpj-already-exists-error'
 import { EmailAlreadyExistsError } from '@/shared/errors/email-already-exists-error'
-import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
-import { RegisterUseCase } from '@/modules/user/services/register'
 
 let usersRepository: InMemoryUsersRepository
-let sut: RegisterUseCase
+let sut: RegisterService
 
 describe('Register Use Case', () => {
   beforeEach(() => {
     usersRepository = new InMemoryUsersRepository()
-    sut = new RegisterUseCase(usersRepository)
+    sut = new RegisterService(usersRepository)
   })
 
   it('should register a new user', async () => {

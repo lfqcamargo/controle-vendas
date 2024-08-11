@@ -1,16 +1,25 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { ProductAlreadyExistsError } from '@/shared/errors/product-already-exists-error'
+import { InMemoryGroupsRepository } from '@/modules/stock/repositories/in-memory/in-memory-groups-repository'
 import { InMemoryProductsRepository } from '@/modules/stock/repositories/in-memory/in-memory-products-repository'
-import { CreateProductUseCase } from '@/modules/stock/services/create-product'
+import { CreateProductService } from '@/modules/stock/services/create-product'
+import { GroupNotExistsError } from '@/shared/errors/group-not-exists-error'
+import { ProductAlreadyExistsError } from '@/shared/errors/product-already-exists-error'
 
 let productsRepository: InMemoryProductsRepository
-let sut: CreateProductUseCase
+let groupsRepository: InMemoryGroupsRepository
+let sut: CreateProductService
 
 describe('Create Product Use Case', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     productsRepository = new InMemoryProductsRepository()
-    sut = new CreateProductUseCase(productsRepository)
+    groupsRepository = new InMemoryGroupsRepository()
+    sut = new CreateProductService(productsRepository, groupsRepository)
+
+    await groupsRepository.create({
+      user_id: 'user-id',
+      description: 'Pão',
+    })
   })
 
   it('should register a new product', async () => {
@@ -43,5 +52,17 @@ describe('Create Product Use Case', () => {
         priceSell: 0.75,
       }),
     ).rejects.toBeInstanceOf(ProductAlreadyExistsError)
+  })
+
+  it('should not be possible to register with a non-existent group', async () => {
+    await expect(() =>
+      sut.execute({
+        userId: 'user-id',
+        groupId: 2,
+        description: 'Pão de Forma',
+        priceBuy: 0.5,
+        priceSell: 0.75,
+      }),
+    ).rejects.toBeInstanceOf(GroupNotExistsError)
   })
 })

@@ -6,7 +6,7 @@ import { ProductsRepository } from '../interface/products-repository'
 export class InMemoryProductsRepository implements ProductsRepository {
   public items: Product[] = []
 
-  async findByDescription(userId: string, description: string) {
+  async searchByDescription(userId: string, description: string) {
     const product =
       this.items.find(
         (product) =>

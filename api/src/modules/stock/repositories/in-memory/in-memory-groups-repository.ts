@@ -5,7 +5,7 @@ import { GroupsRepository } from '../interface/groups-repository'
 export class InMemoryGroupsRepository implements GroupsRepository {
   public items: Group[] = []
 
-  async findByDescription(userId: string, description: string) {
+  async searchByDescription(userId: string, description: string) {
     const group =
       this.items.find(
         (group) =>
