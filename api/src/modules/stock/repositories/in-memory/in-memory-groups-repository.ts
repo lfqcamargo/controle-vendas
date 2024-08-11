@@ -5,9 +5,9 @@ import { GroupsRepository } from '../interface/groups-repository'
 export class InMemoryGroupsRepository implements GroupsRepository {
   public items: Group[] = []
 
-  async delete(userId: string, groupId: number): Promise<boolean> {
+  async delete(userId: string, id: number): Promise<boolean> {
     const groupIndex = this.items.findIndex(
-      (group) => group.user_id === userId && group.id === groupId,
+      (group) => group.user_id === userId && group.id === id,
     )
 
     if (groupIndex !== -1) {

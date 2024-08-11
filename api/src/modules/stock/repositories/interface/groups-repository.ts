@@ -1,7 +1,8 @@
 import { Group, Prisma } from '@prisma/client'
 
 export interface GroupsRepository {
-  delete(userId: string, groupId: number): Promise<boolean>
+  delete(userId: string, id: number): Promise<boolean>
+
   fetchAll(
     userId: string,
     page?: number,
@@ -12,10 +13,13 @@ export interface GroupsRepository {
     totalPages: number
     currentPage: number
   } | null>
+
   searchByDescription(
     userId: string,
     description: string,
   ): Promise<Group | null>
+
   findById(userId: string, id: number): Promise<Group | null>
+
   create(data: Prisma.GroupUncheckedCreateInput): Promise<Group>
 }

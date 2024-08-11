@@ -13,7 +13,7 @@ describe('Delete Group', () => {
     sut = new DeleteGroupService(groupsRepository)
   })
 
-  it('should return a list of groups', async () => {
+  it('should delete group', async () => {
     const group = await groupsRepository.create({
       user_id: 'user-id',
       description: 'Pão',
