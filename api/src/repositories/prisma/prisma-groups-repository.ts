@@ -1,12 +1,30 @@
-import { Group, Prisma } from '@prisma/client'
+import { Prisma } from '@prisma/client'
 
 import { prisma } from '@/lib/prisma'
 
 import { GroupsRepository } from '../groups-repository'
 
 export class PrismaGroupsRepository implements GroupsRepository {
-  findById(id: string): Promise<Group | null> {
-    throw new Error(`${id} Method not implemented.`)
+  async searchByDescription(userId: string, description: string) {
+    const group = await prisma.group.findFirst({
+      where: {
+        user_id: userId,
+        description,
+      },
+    })
+
+    return group
+  }
+
+  async findById(userId: string, id: number) {
+    const group = await prisma.group.findUnique({
+      where: {
+        user_id: userId,
+        id,
+      },
+    })
+
+    return group
   }
 
   async create(data: Prisma.GroupUncheckedCreateInput) {

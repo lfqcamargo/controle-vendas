@@ -1,7 +1,7 @@
 import { Prisma, Product } from '@prisma/client'
 
 export interface ProductsRepository {
-  findByDescription(
+  searchByDescription(
     userId: string,
     description: string,
   ): Promise<Product | null>

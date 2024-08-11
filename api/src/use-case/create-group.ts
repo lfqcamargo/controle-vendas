@@ -10,7 +10,7 @@ export class CreateGroupUseCase {
   constructor(private groupsRepository: GroupsRepository) {}
 
   async execute({ userId, description }: CreateGroupUseCaseRequest) {
-    const groupAlreadyCreated = await this.groupsRepository.findByDescription(
+    const groupAlreadyCreated = await this.groupsRepository.searchByDescription(
       userId,
       description,
     )

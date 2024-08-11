@@ -8,8 +8,8 @@ module.exports = defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  // test: {
-  //   environmentMatchGlobs: [['src/tests/controllers/**', 'prisma']],
-  //   dir: 'src',
-  // },
+  test: {
+    environmentMatchGlobs: [['src/tests/controllers/**', 'prisma']],
+    dir: './src',
+  },
 })
