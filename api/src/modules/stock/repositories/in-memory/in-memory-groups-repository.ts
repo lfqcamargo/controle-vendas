@@ -5,6 +5,36 @@ import { GroupsRepository } from '../interface/groups-repository'
 export class InMemoryGroupsRepository implements GroupsRepository {
   public items: Group[] = []
 
+  async delete(userId: string, groupId: number): Promise<boolean> {
+    const groupIndex = this.items.findIndex(
+      (group) => group.user_id === userId && group.id === groupId,
+    )
+
+    if (groupIndex !== -1) {
+      this.items.splice(groupIndex, 1)
+      return true
+    }
+
+    return false
+  }
+
+  async fetchAll(userId: string, page: number = 1, take: number = 10) {
+    const startIndex = (page - 1) * take
+    const endIndex = startIndex + take
+
+    const filteredGroups = this.items.filter(
+      (group) => group.user_id === userId,
+    )
+    const groups = filteredGroups.slice(startIndex, endIndex)
+
+    return {
+      groups,
+      totalItems: filteredGroups.length,
+      totalPages: Math.ceil(filteredGroups.length / take),
+      currentPage: page,
+    }
+  }
+
   async searchByDescription(userId: string, description: string) {
     const group =
       this.items.find(
