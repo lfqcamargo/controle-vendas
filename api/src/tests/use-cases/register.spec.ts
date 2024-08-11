@@ -1,10 +1,10 @@
 import { compare, hash } from 'bcryptjs'
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { CPFCNPJAlreadyExistsError } from '@/errors/cpfcnpj-already-exists-error'
-import { EmailAlreadyExistsError } from '@/errors/email-already-exists-error'
+import { CPFCNPJAlreadyExistsError } from '@/shared/errors/cpfcnpj-already-exists-error'
+import { EmailAlreadyExistsError } from '@/shared/errors/email-already-exists-error'
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
-import { RegisterUseCase } from '@/use-case/register'
+import { RegisterUseCase } from '@/modules/user/services/register'
 
 let usersRepository: InMemoryUsersRepository
 let sut: RegisterUseCase

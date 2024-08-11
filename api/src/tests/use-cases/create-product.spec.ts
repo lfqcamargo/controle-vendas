@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { ProductAlreadyExistsError } from '@/errors/product-already-exists-error'
-import { InMemoryProductsRepository } from '@/repositories/in-memory/in-memory-products-repository'
-import { CreateProductUseCase } from '@/use-case/create-product'
+import { ProductAlreadyExistsError } from '@/shared/errors/product-already-exists-error'
+import { InMemoryProductsRepository } from '@/modules/stock/repositories/in-memory/in-memory-products-repository'
+import { CreateProductUseCase } from '@/modules/stock/services/create-product'
 
 let productsRepository: InMemoryProductsRepository
 let sut: CreateProductUseCase

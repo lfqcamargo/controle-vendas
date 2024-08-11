@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { GroupAlreadyExistsError } from '@/errors/group-already-exists-error'
+import { GroupAlreadyExistsError } from '@/shared/errors/group-already-exists-error'
 import { InMemoryGroupsRepository } from '@/repositories/in-memory/in-memory-groups-repository'
-import { CreateGroupUseCase } from '@/use-case/create-group'
+import { CreateGroupUseCase } from '@/modules/stock/services/create-group'
 
 let groupsRepository: InMemoryGroupsRepository
 let sut: CreateGroupUseCase
