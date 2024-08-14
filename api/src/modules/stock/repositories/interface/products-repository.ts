@@ -5,7 +5,7 @@ export interface ProductsRepository {
 
   fetchAllByGroup(
     userId: string,
-    groupId: number,
+    groupId?: number | null,
     page?: number,
     take?: number,
   ): Promise<{

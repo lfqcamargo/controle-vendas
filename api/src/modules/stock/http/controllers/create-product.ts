@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
-import { number, z } from 'zod'
+import { z } from 'zod'
 
 import { makeCreateProductService } from '@/modules/stock/factories/make-create-product-use-case'
 import { GroupNotExistsError } from '@/shared/errors/group-not-exists-error'
@@ -7,10 +7,10 @@ import { ProductAlreadyExistsError } from '@/shared/errors/product-already-exist
 
 export async function create(request: FastifyRequest, reply: FastifyReply) {
   const createProductBodySchema = z.object({
-    groupId: number().nonnegative(),
+    groupId: z.number().nonnegative(),
     description: z.string().min(3).max(50),
-    priceBuy: number().multipleOf(0.01).nonnegative(),
-    priceSell: number().multipleOf(0.01).nonnegative(),
+    priceBuy: z.number().multipleOf(0.01).nonnegative(),
+    priceSell: z.number().multipleOf(0.01).nonnegative(),
   })
 
   const { groupId, description, priceBuy, priceSell } =

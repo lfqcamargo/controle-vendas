@@ -20,21 +20,22 @@ import { ProductTableRow } from './products-table-row'
 
 export function Products() {
   const [searchParams, setSearchParams] = useSearchParams()
-  const pageIndex = z.coerce.number().parse(searchParams.get('_page') ?? '1')
+  const pageIndex = z.coerce.number().parse(searchParams.get('page') ?? '1')
+
+  const groupIdParam = searchParams.get('groupId')
+  const groupId = groupIdParam ? z.coerce.number().parse(groupIdParam) : null
 
   const { data: result, isLoading: isLoadingProducts } = useQuery({
     queryKey: ['products'],
-    queryFn: () => getProducts({ pageIndex }),
+    queryFn: () => getProducts({ groupId, pageIndex }),
   })
   function handlePaginate(pageIndex: number) {
     setSearchParams((state) => {
-      state.set('_page', pageIndex.toString())
+      state.set('page', pageIndex.toString())
 
       return state
     })
   }
-
-  !isLoadingProducts && console.log(result)
 
   return (
     <>
@@ -63,7 +64,7 @@ export function Products() {
                 </tr>
               ) : (
                 result &&
-                result?.data.map((product) => {
+                result?.products.map((product) => {
                   return <ProductTableRow key={product.id} product={product} />
                 })
               )}
@@ -82,8 +83,8 @@ export function Products() {
           <Pagination
             onPageChange={handlePaginate}
             pageIndex={pageIndex}
-            totalCount={result?.items}
-            perPage={result?.pages}
+            totalCount={result?.totalItems ?? 0}
+            perPage={result?.totalPages ?? 1}
           />
         </div>
       </div>

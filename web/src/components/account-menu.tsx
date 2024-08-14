@@ -41,9 +41,9 @@ export function AccountMenu() {
             </div>
           ) : (
             <>
-              <span>{profile?.name}</span>
+              <span>{profile?.user.name}</span>
               <span className="text-xs font-normal text-muted-foreground">
-                {profile?.email}
+                {profile?.user.email}
               </span>
             </>
           )}

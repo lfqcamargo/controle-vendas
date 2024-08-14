@@ -21,28 +21,29 @@ describe('Fetch Group', () => {
       })
     }
 
-    const { groups } = await sut.execute({
+    const result = await sut.execute({
       userId: 'user-id',
       page: 3,
       take: 10,
     })
 
+    expect(result).toHaveProperty('groups')
+    expect(result).toHaveProperty('totalItems', 22)
+    expect(result).toHaveProperty('totalPages', 3)
+    expect(result).toHaveProperty('currentPage', 3)
+
+    const { groups } = result
     expect(groups).toHaveLength(2)
-    expect(groups).toEqual([
-      expect.objectContaining({
-        id: 21,
-        user_id: 'user-id',
-        description: 'Grupo - 21',
-      }),
-      expect.objectContaining({
-        id: 22,
-        user_id: 'user-id',
-        description: 'Grupo - 22',
-      }),
-    ])
+    expect(groups[0]).toHaveProperty('id', 21)
+    expect(groups[0]).toHaveProperty('description', 'Grupo - 21')
+    expect(groups[0]).toHaveProperty('user_id', 'user-id')
+
+    expect(groups[1]).toHaveProperty('id', 22)
+    expect(groups[1]).toHaveProperty('description', 'Grupo - 22')
+    expect(groups[1]).toHaveProperty('user_id', 'user-id')
   })
 
-  it('shoueld fit should not be possible to find groups if none have been createdetch groups', async () => {
+  it('should throw an error if no groups are found', async () => {
     await expect(() =>
       sut.execute({
         userId: 'user-id',

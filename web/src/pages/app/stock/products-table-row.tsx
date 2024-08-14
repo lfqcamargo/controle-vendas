@@ -13,12 +13,13 @@ import { TableCell, TableRow } from '@/components/ui/table'
 
 interface ProductTableRowProps {
   product: {
-    id: string
+    id: number
     description: string
-    group: string
-    priceBuy: string
-    priceSell: string
-    dateCreated: string
+    price_buy: number
+    price_sell: number
+    date_created: Date
+    user_id: string
+    group_id: number
   }
 }
 
@@ -27,10 +28,10 @@ export function ProductTableRow({ product }: ProductTableRowProps) {
     <TableRow>
       <TableCell className="font-medium">{product.id}</TableCell>
       <TableCell>{product.description}</TableCell>
-      <TableCell>{product.group}</TableCell>
-      <TableCell>{product.priceBuy}</TableCell>
-      <TableCell>{product.priceSell}</TableCell>
-      <TableCell>{product.dateCreated}</TableCell>
+      <TableCell>{product.group_id}</TableCell>
+      <TableCell>{product.price_buy}</TableCell>
+      <TableCell>{product.price_sell}</TableCell>
+      <TableCell>{product.date_created.toString()}</TableCell>
       <TableCell>
         <Dialog>
           <DialogTrigger asChild>

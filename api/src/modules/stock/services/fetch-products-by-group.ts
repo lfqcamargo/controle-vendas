@@ -5,7 +5,7 @@ import { ResourceNotFoundError } from '@/shared/errors/resource-not-found-error'
 
 interface FetchProductsByGroupServiceRequest {
   userId: string
-  groupId: number
+  groupId?: number
   page?: number
   take?: number
 }

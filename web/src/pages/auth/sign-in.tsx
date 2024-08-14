@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useMutation } from '@tanstack/react-query'
 import { Facebook, Instagram, Twitch, Twitter } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
 import { useForm } from 'react-hook-form'
@@ -6,6 +7,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
+import { signIn } from '@/api/sign-in'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
@@ -17,7 +19,7 @@ const signInForm = z.object({
   email: z.string().email({ message: 'Email inválido' }),
   password: z
     .string()
-    .min(8, { message: 'A senha deve conter pelo menos 8 caracters' })
+    .min(6, { message: 'A senha deve conter pelo menos 6 caracters' })
     .max(20, { message: 'A senha deve não pode ter mais de 20 caracteres' }),
 })
 
@@ -31,7 +33,7 @@ export function SignIn() {
     register,
     handleSubmit,
     watch,
-    reset,
+
     formState: { errors, isSubmitting },
   } = useForm<SignInForm>({
     resolver: zodResolver(signInForm),
@@ -40,16 +42,13 @@ export function SignIn() {
     },
   })
 
+  const { mutateAsync: authenticate } = useMutation({
+    mutationFn: signIn,
+  })
+
   async function handleSignIn(data: SignInForm) {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      if (
-        data.email !== 'lfqcamargo@gmail.com' ||
-        data.password !== '123456789'
-      ) {
-        throw new Error()
-      }
-      reset()
+      await authenticate({ email: data.email, password: data.password })
       navigate('/')
     } catch (error) {
       toast.error('Erro ao Realizar Login')

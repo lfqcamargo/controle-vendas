@@ -1,4 +1,5 @@
 import fastifyCookie from '@fastify/cookie'
+import cors from '@fastify/cors'
 import fastifyJwt from '@fastify/jwt'
 import fastify from 'fastify'
 import { ZodError } from 'zod'
@@ -8,6 +9,11 @@ import { appRoutes } from './shared/routes'
 
 export const app = fastify()
 
+app.register(cors, {
+  origin: 'http://localhost:5173',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+})
 app.register(fastifyJwt, {
   secret: env.JWT_SECRET,
   cookie: {
