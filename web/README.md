@@ -30,3 +30,8 @@ Este sistema fornece uma solução completa e acessível para gestão de estoque
 ## Licença
 
 Este código é propriedade exclusiva de Lucas Fernando Quinato de Camargo e não pode ser usado, modificado ou distribuído sem permissão expressa. Veja o arquivo [LICENSE](LICENSE) para detalhes completos.
+
+
+![Login](./utils/images/controle_vendas.png)
+![Cadastro](./utils/images/sign-up.png)
+![Dashboard](./utils/images/dashboard.png)
